@@ -1,0 +1,47 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import 'reset';
+
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #ccc;
+	// min-height: 100vh;
+	background: linear-gradient(to bottom right, green, blue);
+	background-attachment: fixed;
+	color: white;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.btn{
+	width: 50px;
+	height: 20px;
+	padding: 10px;
+	text-align:center;
+	background-color: white;
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+}
+
+p{
+	margin: 15px;
+}
