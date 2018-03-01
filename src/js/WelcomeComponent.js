@@ -9,7 +9,7 @@ var WelcomeComponent = Vue.component("welcome", {
 			<h1>Hi, welcome to Giphy Battle</h1>
 			<p>What's your name?</p>
 			<input v-model="enteredUsername" >
-			<router-link class="btn" to="/game">SUBMIT</router-link>
+			<router-link class="btn" to="/instruction">SUBMIT</router-link>
 		</div>
 	`,
 	watch: {

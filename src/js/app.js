@@ -3,6 +3,8 @@ const router = new VueRouter({
 		{ path: '', component: WelcomeComponent },
 		{ path: '/game', component: GameComponent },
 		{ path: '/submit', component: SubmissionComponent },
+		{ path: '/instruction', component: InstructionComponent },
+
 	]
 });
 
@@ -11,12 +13,13 @@ var app = new Vue({
 	router: router,
 	data: {
 		username: "",
-		seconds: 20
+		seconds: 20,
+		status: [],
 	},
 	created: function() {
-		// use created to do initial AJAX lookups
-		// this.getTweets();
-		// setInterval(this.tick, 1000)
+		this.getStatus();
+
+		setInterval(this.getStatus, 3000)
 	},
 	methods: {
 		// tick: function(){
@@ -30,21 +33,15 @@ var app = new Vue({
 			this.username = enteredUsername;
 			console.log("app.js received and stored username", this.username)
 		},
-		getGiphys: function() {
-			if (!this.hashtag || this.hashtag.length <= 3) {
-				this.tweets = [];
-				return;
-			}
-			var uri = '?op=search_tweets&q=';
-			console.log('getTweets', uri);
+		getStatus: function() {
+	
+			var uri = 'http://circuslabs.net:6432/status';
+			// console.log('getStatus', uri);
 			axios
 				.get(uri)
 				.then((response) => {
-					console.log(response);
-					if (response && response.data && response.data.statuses) {
-					} else {
-						console.warn("Valid response from twitter api/proxy, but bad data");
-					}
+					// console.log(response);	
+					this.status = response.data;	
 				})
 				.catch((error) => {
 					console.warn(error);
