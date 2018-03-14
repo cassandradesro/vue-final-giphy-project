@@ -13,7 +13,14 @@
 
 		<div id="app">
 
-			<router-view @userenteredusername="userEnteredUsername" :status="status"></router-view>
+			<router-view 
+				@userselectedgiphy="userSelectedGiphy"
+				@userenteredusername="userEnteredUsername" 
+				@uservotedgiphy="userVotedGiphy"
+				:status="status" 
+				:localtimeleft="localtimeleft">
+					
+			</router-view>
 
 		</div>
 
@@ -23,7 +30,7 @@
 
 		<script src="dist/js/WelcomeComponent.js"></script>
 		<script src="dist/js/GameComponent.js"></script>
-		<script src="dist/js/SubmissionComponent.js"></script>
+		<script src="dist/js/VoteComponent.js"></script>
 		<script src="dist/js/InstructionComponent.js"></script>
 
 		<script src="dist/js/app.js"></script>

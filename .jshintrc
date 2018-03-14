@@ -4,6 +4,7 @@
 	"browser": true,
 	"undef": false,
 	"devel": true,
+	"asi": true,
 	"globals": {
 		"MY_GLOBAL": true
 	}
